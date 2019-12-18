@@ -11,19 +11,25 @@ $(document).ready(function(){
     $("#currentDay").text(moment());
 });
 
+var myTextArea = $('textarea');
+myTextArea.val(myTextArea.val() + '');
+console.log(myTextArea)
+
+
 $(document).ready(function(){ 
-    var passedTime = $("#description1").length;
-    var currentTime = $("#description1").length;
-    var futureTime = $("#description1").length;
-    
-	if (passedTime > 2) {
+    //var passedTime = $("#description1").length;
+    //var currentTime = $("#description1").length;
+    //var futureTime = $("#description1").length;
+    var currentTime = $("currentDay").length;
+
+	if (currentTime > 2) {
         $("textarea").css("background", "gray");
         console.log()
 	} 
-	else if (currentTime > 2) {
+	else if (currentTime < 2) {
 		$("#textarea").css("background", "green");
     }
-    else if (futureTime > 2) {
+    else if (currentTime =  2) {
         $("#textarea").css("background", "red");
     }
 
